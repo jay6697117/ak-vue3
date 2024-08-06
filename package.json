@@ -1,0 +1,39 @@
+{
+  "name": "ak-vue",
+  "private": false,
+  "version": "1.0.0",
+  "repository": "git@github.com:337547038/ak-vue3.git",
+  "author": "337547038 <337547038@qq.com>",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue,.ts src --fix",
+    "lint:fromat": "prettier -c --parser typescript \"{src,__tests__,e2e}/**/*.[jt]s?(x)\"",
+    "build:lib": "pnpm --filter ./build build"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "@vue/eslint-config-typescript": "^11.0.3",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.13.0",
+    "prettier": "^2.8.8",
+    "sass": "^1.62.1",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.9",
+    "vite-plugin-doc-preview": "^0.2.1",
+    "vite-plugin-pages": "^0.31.0",
+    "vue-tsc": "^1.6.5"
+  }
+}

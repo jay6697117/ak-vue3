@@ -1,0 +1,54 @@
+@charset "utf-8";
+@include ns(date-picker) {background: #fff;padding: 5px; overflow: hidden;box-sizing: border-box;min-width: 100%;display: flex;
+  .calendar {display: block; user-select: none;width: 250px;
+    &:nth-child(2) {border-left: 1px solid $borderColor }
+  }
+  .calendar-head {height: 34px;line-height: 34px;display: flex;align-items: center;justify-content: space-between;padding: 0 10px;
+    span {flex: 2;text-align: center;
+      a {margin: 0}
+    }
+    a { cursor: pointer;font-size: 14px;margin: 0 5px }
+  }
+  .calendar-body { text-align: center; position: relative;
+    .calendar-week, .calendar-list {display: flex}
+    .calendar-list {flex-wrap: wrap}
+    .calendar-days {
+      a { width: 14.28%; height: 25px;line-height: 25px; display: block; font-size: 12px; color: #333; box-sizing: border-box; cursor: pointer; position: relative;
+        &:hover { color: $primaryColor; }
+        span {display: block;width: 25px;height: 100%;border-radius: 50%;margin: 0 auto;position: relative}
+        i {position: absolute;right: -4px;top: -5px;transform: scale(.8);color: $primaryColor}
+      }
+      /*非当前月*/
+      .calendar-date-out { color: #999; }
+      .calendar-date-disabled { color: #ccc; cursor: not-allowed !important;
+        &:hover { background: none }
+      }
+      /*当前选中*/
+      .calendar-date-select {
+        span {background: $primaryColor;color: #fff}
+      }
+    }
+    /*今天的*/
+    .calendar-date-today {
+      color: red;
+      span {color: red}
+    }
+    .calendar-week {
+      a { cursor: default;
+        &:hover { background: none; }
+      }
+    }
+    .calendar-months, .calendar-year {background: #fff; overflow: hidden;z-index: 10;display: flex;flex-wrap: wrap;
+      a {width: 33.33%; height: 44px;line-height: 44px; display: block; cursor: pointer;
+        &:hover { background: #eaf8fe; }
+        &.calendar-date-select { background: $primaryColor; color: #fff; font-weight: 700; }
+        &.calendar-date-disabled { background: #ccc; cursor: not-allowed;color: #999 }
+      }
+    }
+    .calendar-time {height: 22px;line-height: 22px; position: relative;display: flex;align-items: center;justify-content: space-between;padding-left: 10px;
+      .calendar-time-input { border: 1px solid $borderColor; width: 80px;}
+      input { width: 20px; text-align: center; border: 0; font-size: 12px;outline: none }
+      .btn-time { right: 10px; top: 0; position: absolute; cursor: pointer; }
+    }
+  }
+}
